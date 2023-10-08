@@ -1,6 +1,6 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2023 Muhammad Saad <github.5s32y@slmail.me>
+This file is part of CLI application pix.
 */
 package main
 

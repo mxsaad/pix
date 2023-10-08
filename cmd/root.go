@@ -1,6 +1,6 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
+Copyright © 2023 Muhammad Saad <github.5s32y@slmail.me>
+This file is part of CLI application pix.
 */
 package cmd
 
@@ -14,14 +14,9 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "pix",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:   "pix",	
+	Short: "Image conversion and merging",
+	Long: `Pix is a command-line tool focused on image conversion and merging. It simplifies these tasks, making it easy to convert between image formats and merge multiple images. For detailed information and usage instructions, please refer to github.com/mxsaad/pix.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
