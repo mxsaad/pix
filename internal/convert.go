@@ -8,6 +8,8 @@ import (
 	"image/png"
 	"os"
 	"strings"
+
+	"github.com/chai2010/webp"
 )
 
 // ConvertFormat converts an image from one format to another.
@@ -42,11 +44,19 @@ func ConvertFormat(inputPath, outputPath, outputFormat string) error {
 	// Encode and save the output image in the desired format
 	switch outputFormat {
 	case "png":
-		return png.Encode(outputFile, img)
+		if err := png.Encode(outputFile, img); err != nil {
+			return err
+		}
 	case "jpeg", "jpg":
-		return jpeg.Encode(outputFile, img, nil)
+		if err := jpeg.Encode(outputFile, img, nil); err != nil {
+			return err
+		}
 	case "gif":
 		if err := gif.Encode(outputFile, img, nil); err != nil {
+			return err
+		}
+	case "webp":
+		if err := webp.Encode(outputFile, img, nil); err != nil {
 			return err
 		}
 	default:
