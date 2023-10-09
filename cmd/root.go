@@ -10,13 +10,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-
-
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "pix",	
+	Use:   "pix",
 	Short: "Image conversion and merging",
-	Long: `Pix is a command-line tool focused on image conversion and merging. It simplifies these tasks, making it easy to convert between image formats and merge multiple images. For detailed information and usage instructions, please refer to github.com/mxsaad/pix.`,
+	Long:  `Pix is a command-line tool for high-speed image conversion and merging. It can currently convert between JPEG, PNG, and GIF formats. For more information, please refer to github.com/mxsaad/pix.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -42,5 +40,3 @@ func init() {
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-

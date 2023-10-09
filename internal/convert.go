@@ -3,6 +3,7 @@ package internal
 import (
 	"errors"
 	"image"
+	"image/gif"
 	"image/jpeg"
 	"image/png"
 	"os"
@@ -10,7 +11,7 @@ import (
 )
 
 // ConvertFormat converts an image from one format to another.
-// Supported formats: "png", "jpeg".
+// Supported formats: "png", "jpeg", "gif".
 func ConvertFormat(inputPath, outputPath, outputFormat string) error {
 	inputFormat := getFileFormat(inputPath)
 
@@ -44,9 +45,15 @@ func ConvertFormat(inputPath, outputPath, outputFormat string) error {
 		return png.Encode(outputFile, img)
 	case "jpeg", "jpg":
 		return jpeg.Encode(outputFile, img, nil)
+	case "gif":
+		if err := gif.Encode(outputFile, img, nil); err != nil {
+			return err
+		}
 	default:
 		return errors.New("Unsupported output format: " + outputFormat)
 	}
+
+	return nil
 }
 
 // getFileFormat returns the file format (extension) of a given file path.
