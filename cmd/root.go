@@ -14,7 +14,9 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "pix",
 	Short: "Image conversion and merging",
-	Long:  `Pix is a command-line tool for high-speed image conversion and merging. It can currently convert between JPEG, PNG, and GIF formats. For more information, please refer to github.com/mxsaad/pix.`,
+	Long: `Pix is a command-line tool for high-speed image conversion and merging. 
+	It can currently convert between JPEG, PNG, GIF, WEBP, BMP, and TIFF formats. 
+	For more information, please refer to github.com/mxsaad/pix.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
