@@ -10,6 +10,8 @@ import (
 	"strings"
 
 	"github.com/chai2010/webp"
+	"golang.org/x/image/bmp"
+	"golang.org/x/image/tiff"
 )
 
 // ConvertFormat converts an image from one format to another.
@@ -57,6 +59,14 @@ func ConvertFormat(inputPath, outputPath, outputFormat string) error {
 		}
 	case "webp":
 		if err := webp.Encode(outputFile, img, nil); err != nil {
+			return err
+		}
+	case "bmp":
+		if err := bmp.Encode(outputFile, img); err != nil {
+			return err
+		}
+	case "tiff", "tif":
+		if err := tiff.Encode(outputFile, img, nil); err != nil {
 			return err
 		}
 	default:
